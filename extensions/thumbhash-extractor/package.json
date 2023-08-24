@@ -1,13 +1,13 @@
 {
   "private": true,
-  "name": "@linefusion/directus-extension-text-extractor",
-  "description": "Directus Text Extractor",
+  "name": "@linefusion/directus-extension-thumbhash-extractor",
+  "description": "Directus ThumbHash Extension",
   "icon": "extension",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/linefusion/directus-extensions",
-    "directory": "extensions/text-extractor"
+    "directory": "extensions/thumbhash-extractor"
   },
   "author": {
     "name": "João Biondo",
@@ -36,7 +36,7 @@
     "entries": [
       {
         "type": "operation",
-        "name": "extract-text",
+        "name": "extract-thumbhash",
         "source": {
           "app": "src/operation.ts",
           "api": "src/operation.server.ts"
@@ -68,8 +68,16 @@
     "typescript": "^5.2.2",
     "vitest": "^0.34.2"
   },
+  "peerDependencies": {
+    "sharp": "^0.32.4"
+  },
+  "peerDependenciesMeta": {
+    "sharp": {
+      "optional": false
+    }
+  },
   "dependencies": {
-    "office-text-extractor": "^3.0.1"
+    "thumbhash": "^0.1.1"
   },
   "publishConfig": {
     "directory": "dist",
@@ -85,7 +93,7 @@
         "entries": [
           {
             "type": "operation",
-            "name": "extract-text",
+            "name": "extract-thumbhash",
             "source": {
               "app": "src/operation.ts",
               "api": "src/operation.server.ts"

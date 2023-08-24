@@ -1,21 +1,21 @@
 {
   "private": true,
-  "name": "@linefusion/directus-extension-blurhash",
+  "name": "@linefusion/directus-extension-blurhash-extractor",
   "description": "Directus BlurHash Extension",
   "icon": "extension",
   "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/linefusion/directus-extensions",
-    "directory": "extensions/blurhash"
+    "directory": "extensions/blurhash-extractor"
   },
   "author": {
     "name": "João Biondo",
     "email": "wolfulus@gmail.com"
   },
   "files": [
-    "dist/index.js",
-    "src/index.ts",
+    "dist/**/*.js",
+    "src/**/*.ts",
     "LICENSE",
     "CHANGELOG.md",
     "README.md"
@@ -30,13 +30,13 @@
   "directus:extension": {
     "type": "bundle",
     "path": {
-      "app": "dist/app.js",
-      "api": "dist/api.js"
+      "app": "dist/dist/app.js",
+      "api": "dist/dist/api.js"
     },
     "entries": [
       {
         "type": "operation",
-        "name": "compute-blurhash",
+        "name": "extract-blurhash",
         "source": {
           "app": "src/operation.ts",
           "api": "src/operation.server.ts"
@@ -54,18 +54,19 @@
     "dev": "nodemon --watch src/ -e ts --exec \"pnpm build:dev\""
   },
   "devDependencies": {
-    "@directus/api": "12.1.1",
-    "@directus/extensions-sdk": "10.1.7",
-    "@directus/types": "10.1.3",
-    "@types/node": "^20.4.5",
+    "@directus/api": "12.1.3",
+    "@directus/extensions-sdk": "10.1.8",
+    "@directus/shared": "^9.24.0",
+    "@directus/types": "10.1.4",
+    "@types/node": "^20.5.4",
     "@wolfpkgs/files": "^0.2.13",
     "@wolfpkgs/package": "^0.2.14",
     "@wolfpkgs/pnpm": "^0.2.14",
     "@wolfpkgs/toolbox": "^0.2.13",
     "@wolfpkgs/tsconfig": "^0.2.0",
     "nodemon": "^3.0.1",
-    "typescript": "^5.1.6",
-    "vitest": "^0.33.0"
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.2"
   },
   "peerDependencies": {
     "sharp": "^0.32.4"
@@ -84,10 +85,22 @@
     "overrides": {
       "private": false,
       "directus:extension": {
-        "type": "hook",
-        "path": "./dist/index.js",
-        "source": "./src/index.ts",
-        "host": "10.3.0"
+        "type": "bundle",
+        "path": {
+          "app": "dist/app.js",
+          "api": "dist/api.js"
+        },
+        "entries": [
+          {
+            "type": "operation",
+            "name": "extract-blurhash",
+            "source": {
+              "app": "src/operation.ts",
+              "api": "src/operation.server.ts"
+            }
+          }
+        ],
+        "host": "^10.4.0"
       }
     }
   }
