@@ -3,7 +3,7 @@
   "name": "@linefusion/directus-extension-text-extractor",
   "description": "Directus Text Extractor",
   "icon": "extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/linefusion/directus-extensions",
@@ -51,7 +51,8 @@
     "build:dev": "directus-extension build --no-minify && wtx package prepare && pnpm copy:src",
     "copy:src": "wtx files copy --source ./src --target ./dist/src",
     "copy:info": "wtx files copy --source.base ./ --source.files {README.md,LICENSE,CHANGELOG} --target ./dist/",
-    "dev": "nodemon --watch src/ -e ts --exec \"pnpm build:dev\""
+    "dev": "nodemon --watch src/ -e ts --exec \"pnpm build:dev\"",
+    "release": "cd dist && pnpm publish --access public --no-git-checks"
   },
   "devDependencies": {
     "@directus/api": "12.1.3",

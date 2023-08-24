@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@linefusion/directus-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "dev": "pnpm bootstrap && nodemon --ignore dist --ignore node_modules ./server.js start",
     "start": "nodemon --ignore dist --ignore node_modules ./server.js start",
