@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "@linefusion/directus-extensions",
+  "description": "Directus Extensions Repository",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linefusion/directus-extensions"
+  },
+  "author": {
+    "name": "João Biondo",
+    "email": "wolfulus@gmail.com"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "docker": "docker build --context . --tag linefusion/directus .",
+    "dev": "pnpm --filter directus-server cli bootstrap && pnpm --filter directus-server dev"
+  }
+}

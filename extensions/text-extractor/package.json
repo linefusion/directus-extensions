@@ -1,0 +1,99 @@
+{
+  "private": true,
+  "name": "@linefusion/directus-extension-text-extractor",
+  "description": "Directus Text Extractor",
+  "icon": "extension",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linefusion/directus-extensions",
+    "directory": "extensions/text-extractor"
+  },
+  "author": {
+    "name": "João Biondo",
+    "email": "wolfulus@gmail.com"
+  },
+  "files": [
+    "dist/**/*.js",
+    "src/**/*.ts",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-operation",
+    "directus-custom-bundle"
+  ],
+  "directus:extension": {
+    "type": "bundle",
+    "path": {
+      "app": "dist/dist/app.js",
+      "api": "dist/dist/api.js"
+    },
+    "entries": [
+      {
+        "type": "operation",
+        "name": "extract-text",
+        "source": {
+          "app": "src/operation.ts",
+          "api": "src/operation.server.ts"
+        }
+      }
+    ],
+    "host": "^10.4.0"
+  },
+  "scripts": {
+    "build": "directus-extension build && pnpm build:pkg && pnpm run /copy:.*/",
+    "build:pkg": "wtx package prepare",
+    "build:dev": "directus-extension build --no-minify && wtx package prepare && pnpm copy:src",
+    "copy:src": "wtx files copy --source ./src --target ./dist/src",
+    "copy:info": "wtx files copy --source.base ./ --source.files {README.md,LICENSE,CHANGELOG} --target ./dist/",
+    "dev": "nodemon --watch src/ -e ts --exec \"pnpm build:dev\""
+  },
+  "devDependencies": {
+    "@directus/api": "12.1.1",
+    "@directus/extensions-sdk": "10.1.7",
+    "@directus/shared": "^9.24.0",
+    "@directus/types": "10.1.3",
+    "@types/node": "^20.4.5",
+    "@wolfpkgs/files": "^0.2.13",
+    "@wolfpkgs/package": "^0.2.14",
+    "@wolfpkgs/pnpm": "^0.2.14",
+    "@wolfpkgs/toolbox": "^0.2.13",
+    "@wolfpkgs/tsconfig": "^0.2.0",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "dependencies": {
+    "office-text-extractor": "^3.0.1"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "linkDirectory": false,
+    "overrides": {
+      "private": false,
+      "directus:extension": {
+        "type": "bundle",
+        "path": {
+          "app": "dist/app.js",
+          "api": "dist/api.js"
+        },
+        "entries": [
+          {
+            "type": "operation",
+            "name": "extract-text",
+            "source": {
+              "app": "src/operation.ts",
+              "api": "src/operation.server.ts"
+            }
+          }
+        ],
+        "host": "^10.4.0"
+      }
+    }
+  }
+}

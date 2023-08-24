@@ -1,0 +1,75 @@
+{
+  "private": true,
+  "name": "directus-utils",
+  "description": "Directus Extension Utilities",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linefusion/directus-extensions",
+    "directory": "packages/directus-utils"
+  },
+  "author": {
+    "name": "João Biondo",
+    "email": "wolfulus@gmail.com"
+  },
+  "files": [
+    "dist/index.js",
+    "src/index.ts",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-custom-hook"
+  ],
+  "directus:extension": {
+    "type": "hook",
+    "path": "./dist/dist/index.js",
+    "source": "./src/index.ts",
+    "host": "10.0.0"
+  },
+  "scripts": {
+    "build": "tsc && wtx package prepare",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "@directus/api": "12.1.1",
+    "@directus/extensions-sdk": "10.1.7",
+    "@directus/types": "10.1.3",
+    "@types/dot-object": "^2.1.2",
+    "@types/express": "^4.17.17",
+    "@types/lodash-es": "^4.17.8",
+    "@types/memoizee": "^0.4.8",
+    "@types/node": "^20.4.5",
+    "@types/uuid": "^9.0.2",
+    "@wolfpkgs/files": "^0.2.13",
+    "@wolfpkgs/package": "^0.2.14",
+    "@wolfpkgs/pnpm": "^0.2.14",
+    "@wolfpkgs/toolbox": "^0.2.13",
+    "@wolfpkgs/tsconfig": "^0.2.0",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "linkDirectory": false,
+    "overrides": {
+      "private": false
+    }
+  },
+  "dependencies": {
+    "@wolfpkgs/core": "^0.2.13",
+    "ajv": "^8.12.0",
+    "dot-object": "^2.1.4",
+    "jsonata": "^2.0.3",
+    "lodash-es": "^4.17.21",
+    "memoizee": "^0.4.15",
+    "ts-pattern": "^5.0.4",
+    "uuid": "^9.0.0",
+    "knex": "^2.4.2"
+  }
+}

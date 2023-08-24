@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "name": "directus-server",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "pnpm bootstrap && nodemon --ignore dist --ignore node_modules ./server.js start",
+    "start": "nodemon --ignore dist --ignore node_modules ./server.js start",
+    "bootstrap": "pnpm cli bootstrap",
+    "cli": "node ./server.js"
+  },
+  "dependencies": {
+    "@directus/api": "12.1.1",
+    "@wolfpkgs/core": "^0.2.13",
+    "directus": "10.5.2",
+    "@linefusion/directus-extension-blurhash": "workspace:*",
+    "@linefusion/directus-extension-text-extractor": "workspace:*",
+    "@linefusion/directus-extension-thumbhash": "workspace:*"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "vitest": "^0.33.0"
+  }
+}
