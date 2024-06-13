@@ -1,0 +1,25 @@
+{
+  "imports": {
+    "jora": "npm:jora",
+    "@david/dax": "jsr:@david/dax@^0.41.0"
+  },
+  "tasks": {
+    "run": "deno run -A scripts/task.ts"
+  },
+  "unstable": [
+    "bare-node-builtins",
+    "broadcast-channel",
+    //"byonm",
+    "cron",
+    "ffi",
+    "fs",
+    "http",
+    "kv",
+    "net",
+    //"sloppy-imports",
+    "temporal",
+    "unsafe-proto",
+    "webgpu",
+    "worker-options"
+  ]
+}

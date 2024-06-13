@@ -1,4 +1,4 @@
-# @linefusion/directus-extension-blurhash-extractor
+# @linefusion/directus-blurhash-extractor
 
 ## 0.0.1
 

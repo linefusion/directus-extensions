@@ -1,4 +1,4 @@
-# @linefusion/directus-extension-thumbhash-extractor
+# @linefusion/directus-thumbhash-extractor
 
 ## 0.0.1
 

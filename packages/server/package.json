@@ -10,14 +10,14 @@
   },
   "dependencies": {
     "@directus/api": "12.1.3",
+    "@linefusion/directus-blurhash-extractor": "workspace:*",
+    "@linefusion/directus-text-extractor": "workspace:*",
+    "@linefusion/directus-thumbhash-extractor": "workspace:*",
     "@wolfpkgs/core": "^0.2.13",
-    "directus": "10.5.3",
-    "@linefusion/directus-extension-blurhash-extractor": "workspace:*",
-    "@linefusion/directus-extension-text-extractor": "workspace:*",
-    "@linefusion/directus-extension-thumbhash-extractor": "workspace:*"
+    "directus": "10.5.3"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1",
-    "vitest": "^0.34.2"
+    "nodemon": "^3.1.3",
+    "vitest": "^0.34.6"
   }
 }

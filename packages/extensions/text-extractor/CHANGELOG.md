@@ -1,4 +1,4 @@
-# @linefusion/directus-extension-text-extractor
+# @linefusion/directus-text-extractor
 
 ## 0.0.2
 

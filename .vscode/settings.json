@@ -1,0 +1,10 @@
+{
+  "deno.enable": true,
+  "deno.enablePaths": ["./scripts"],
+  "files.associations": {
+    "deno.json": "jsonc",
+    "tsconfig.json": "jsonc",
+    "tsconfig.*.json": "jsonc",
+    "package.json": "json"
+  }
+}

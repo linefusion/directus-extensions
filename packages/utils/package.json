@@ -6,7 +6,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/linefusion/directus-extensions",
-    "directory": "packages/directus-utils"
+    "directory": "packages/utils"
   },
   "author": {
     "name": "João Biondo",
@@ -21,16 +21,8 @@
   ],
   "license": "MIT",
   "keywords": [
-    "directus",
-    "directus-extension",
-    "directus-custom-hook"
+    "directus"
   ],
-  "directus:extension": {
-    "type": "hook",
-    "path": "./dist/dist/index.js",
-    "source": "./src/index.ts",
-    "host": "10.0.0"
-  },
   "scripts": {
     "build": "tsc && wtx package prepare",
     "dev": "tsc --watch"
@@ -39,20 +31,20 @@
     "@directus/api": "12.1.3",
     "@directus/extensions-sdk": "10.1.8",
     "@directus/types": "10.1.4",
-    "@types/dot-object": "^2.1.2",
-    "@types/express": "^4.17.17",
-    "@types/lodash-es": "^4.17.8",
-    "@types/memoizee": "^0.4.8",
-    "@types/node": "^20.5.4",
-    "@types/uuid": "^9.0.2",
+    "@types/dot-object": "^2.1.6",
+    "@types/express": "^4.17.21",
+    "@types/lodash-es": "^4.17.12",
+    "@types/memoizee": "^0.4.11",
+    "@types/node": "^20.14.2",
+    "@types/uuid": "^9.0.8",
     "@wolfpkgs/files": "^0.2.13",
     "@wolfpkgs/package": "^0.2.14",
     "@wolfpkgs/pnpm": "^0.2.14",
     "@wolfpkgs/toolbox": "^0.2.13",
     "@wolfpkgs/tsconfig": "^0.2.0",
-    "nodemon": "^3.0.1",
-    "typescript": "^5.2.2",
-    "vitest": "^0.34.2"
+    "nodemon": "^3.1.3",
+    "typescript": "^5.4.5",
+    "vitest": "^0.34.6"
   },
   "publishConfig": {
     "directory": "dist",
@@ -63,13 +55,13 @@
   },
   "dependencies": {
     "@wolfpkgs/core": "^0.2.13",
-    "ajv": "^8.12.0",
-    "dot-object": "^2.1.4",
-    "jsonata": "^2.0.3",
+    "ajv": "^8.16.0",
+    "dot-object": "^2.1.5",
+    "jsonata": "^2.0.5",
+    "knex": "^2.5.1",
     "lodash-es": "^4.17.21",
-    "memoizee": "^0.4.15",
-    "ts-pattern": "^5.0.5",
-    "uuid": "^9.0.0",
-    "knex": "^2.5.1"
+    "memoizee": "^0.4.17",
+    "ts-pattern": "^5.1.2",
+    "uuid": "^9.0.1"
   }
 }
